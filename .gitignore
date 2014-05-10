@@ -2,3 +2,4 @@
 PodcastSplitter/bin/*
 PodcastSplitter/obj/*
 packages/*
+PodcastSplitter/config.yaml

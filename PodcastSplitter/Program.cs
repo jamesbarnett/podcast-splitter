@@ -16,7 +16,7 @@ namespace PodcastSplitter
             string podcasts = Path.Combine(root, "Selected Shorts from PRI");
 
             string options = string.Format("-q -f -t 4.0 -d C:\\PodcastSplitterOutput\\ -o @b_@t_@n {0}", 
-            string.Format("\"{0}\"", podcasts));
+                string.Format("\"{0}\"", podcasts));
             Console.WriteLine("options: {0}", options);
             Debug.WriteLine(options);
 
