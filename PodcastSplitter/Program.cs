@@ -12,6 +12,14 @@ namespace PodcastSplitter
     {
         static void Main(string[] args)
         {
+            string config = ConfigPath.Path();
+            
+            // Try to load the yaml config if it exists
+            if (File.Exists(config))
+            {
+                Debug.WriteLine("Path exists!");
+            }
+
             string root = "C:\\Users\\jbarnett\\Music\\iTunes\\iTunes Music\\Podcasts\\";
             string podcasts = Path.Combine(root, "Selected Shorts from PRI");
 
