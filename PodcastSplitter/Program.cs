@@ -12,7 +12,7 @@ namespace PodcastSplitter
     {
         static void Main(string[] args)
         {
-            string config = ConfigParser.Parse();
+            var config = ConfigParser.Parse();
             Debug.WriteLine(string.Format("config is {0}", config));
             string root = "C:\\Users\\jbarnett\\Music\\iTunes\\iTunes Music\\Podcasts\\";
             string podcasts = Path.Combine(root, "Selected Shorts from PRI");

@@ -11,7 +11,7 @@ namespace PodcastSplitter
 {
     public static class ConfigParser
     {
-        public static string Parse()
+        public static Dictionary<string, string> Parse()
         {
             string path = ConfigPath.Path();
             var input = new StreamReader(path);
@@ -20,7 +20,17 @@ namespace PodcastSplitter
             var yaml = new YamlStream();
             yaml.Load(input);
 
-            return input.ReadToEnd();
+            var mapping = (YamlMappingNode)yaml.Documents[0].RootNode;
+
+            var config = new Dictionary<string, string>();
+
+            foreach (var entry in mapping.Children)
+            {
+                Debug.WriteLine(string.Format("key: {0}, value", entry.Key, entry.Value));
+                config.Add(entry.Key.ToString(), entry.Value.ToString());
+            }
+
+            return config;
         }
     }
 }
