@@ -13,15 +13,11 @@ namespace PodcastSplitter
         static void Main(string[] args)
         {
             var config = ConfigParser.Parse();
-            Debug.WriteLine(string.Format("config is {0}", config));
-            string root = "C:\\Users\\jbarnett\\Music\\iTunes\\iTunes Music\\Podcasts\\";
-            string podcasts = Path.Combine(root, "Selected Shorts from PRI");
+            string podcasts = Path.Combine(config["root"], config["podcast"]);
 
             string options = string.Format("-q -f -t 4.0 -d C:\\PodcastSplitterOutput\\ -o @b_@t_@n {0}", 
                 string.Format("\"{0}\"", podcasts));
-            Console.WriteLine("options: {0}", options);
-            Debug.WriteLine(options);
-
+            
             Process p = new Process();
             p.StartInfo.FileName = "mp3splt.exe";
             p.StartInfo.Arguments = options;
