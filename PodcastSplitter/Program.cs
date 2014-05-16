@@ -15,11 +15,11 @@ namespace PodcastSplitter
             var config = ConfigParser.Parse();
             string podcasts = Path.Combine(config["root"], config["podcast"]);
 
-            string options = string.Format("-q -f -t 4.0 -d C:\\PodcastSplitterOutput\\ -o @b_@t_@n {0}", 
-                string.Format("\"{0}\"", podcasts));
+            string options = string.Format("-q -f -t 4.0 -d {0} -o @b_@t_@n {1}", 
+                config["outputdir"], string.Format("\"{0}\"", podcasts));
             
             Process p = new Process();
-            p.StartInfo.FileName = "mp3splt.exe";
+            p.StartInfo.FileName = config["mp3split"];
             p.StartInfo.Arguments = options;
             p.StartInfo.WorkingDirectory = Directory.GetCurrentDirectory();
             p.Start();

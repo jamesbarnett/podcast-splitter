@@ -26,7 +26,6 @@ namespace PodcastSplitter
 
             foreach (var entry in mapping.Children)
             {
-                Debug.WriteLine(string.Format("key: {0}, value", entry.Key, entry.Value));
                 config.Add(entry.Key.ToString(), entry.Value.ToString());
             }
 
