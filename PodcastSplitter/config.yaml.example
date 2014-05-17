@@ -1,4 +1,6 @@
 root: C:\Users\<username>\Music\iTunes\iTunes Music\Podcasts\
 podcast: Selected Shorts from PRI
-mp3split: mp3slit.exe
+mp3split: mp3splt.exe
 outputdir: C:\PodcastSplitterOutput
+mp3split_split_options: -q -f -t 4.0
+mp3split_output_options: "@b_@t_@n"
