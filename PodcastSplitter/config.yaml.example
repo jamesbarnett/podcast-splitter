@@ -1,5 +1,5 @@
 root: C:\Users\<username>\Music\iTunes\iTunes Music\Podcasts\
-podcast: Freakonomics Radio
+podcast: This American Life
 mp3splt: mp3splt.exe
 outputdir: C:\PodcastSplitterOutput
 mp3splt_split_options: -q -f -t 4.0
